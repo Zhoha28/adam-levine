@@ -1,14 +1,13 @@
-/* COLORS */
+/* COLORS 
 
-/* 
-White - F5EDED, #fffafa,#fcfcfc
-primary - EF1C25, D72323, #ff2400, #ff4500
+White - #fcfcfc
+primary - EF1C25
 grey - 3E3636
 
 */
 
-/* Typography */
-/* 
+/* Typography 
+
 The rock and roll (headings)
 roboto (p)
 
@@ -50,9 +49,8 @@ a:hover {
 }
 
 body {
-  background-image: url(../images/bg2.png);
+  background-image: url(../images/background-pattern.png);
   background-color: black;
-  /* background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%); */
   color: #f5eded;
   font-family: "Roboto", sans-serif;
 }
@@ -97,7 +95,7 @@ section{
 nav {
   background: black;
   padding-top: 30px;
-  display: flex;
+  display: flex;  
   justify-content: space-between;
   padding: 0.5em 1em;
   align-items: center;
@@ -301,7 +299,117 @@ footer {
   border-bottom: #ef1c25 3px solid;
 }
 
-/* media queries */
+
+
+table {
+  margin: auto;
+  width: 95%;
+  border-collapse: collapse;
+  color: #b1b0b0;
+  margin-bottom: 2em;
+}
+
+
+th {
+  font-family: "RocknRoll One", sans-serif;
+  background: #c9c9c900; 
+  border-top: 1px solid #2d3436;
+  color: #c9c9c9;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  
+}
+td, a{
+  font-size: 18px;
+  text-transform: capitalize;
+}
+th{
+  padding: 10px;
+}
+td{
+  padding: 15px;
+  border-top: 1px solid #2d3436;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    font-size: 15px;
+  } 
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+
+    border: #c9c9c9 1px solid;
+
+    border-radius: 10px;
+    margin: 10px;
+  }
+  td {
+  
+    border: none;
+    border-top: #c9c9c9 1px solid;
+    position: relative;
+    padding-left: 50%;
+    
+  }
+  td:before {
+
+    position: absolute;
+    left: 20px;
+    width: 30%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: center;
+  } 
+
+  td:nth-of-type(1):before {
+    content: "Date";
+    font-size: 18px;
+   color: #fffafa;
+    font-weight: 500;
+  }
+  td:nth-of-type(2):before {
+    content: "Location";
+    font-size: 18px;
+   color: #fffafa;
+    font-weight: 500;
+  }
+  td:nth-of-type(3):before {
+    content: "Number of entries";
+    font-size: 18px;
+   color: #fffafa;
+    font-weight: 500;
+  }
+  td:nth-of-type(4):before {
+    content: "Guest";
+    font-size: 18px;
+   color: #fffafa;
+    font-weight: 500;
+  }
+  td:nth-of-type(5):before {
+    content: "Action";
+    font-size: 18px;
+   color: #fffafa;
+    font-weight: 500;
+  }
+
+}
+/* large devices */
 @media only screen and (min-width: 1024px) {
   nav {
     background: transparent;
@@ -326,7 +434,7 @@ footer {
   font-size: 100px;
   opacity: 0.2;
   color: #ef1c25;
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: transparent; 
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ef1c25;
   
@@ -334,16 +442,28 @@ footer {
 
 .bg-text-shows::before{
   position: absolute;
- 
   top: -8;
   left: 40%;
   margin-left: -5px;
   content: 'TOUR';
-
   font-size: 100px;
   opacity: 0.2;
   color: #ef1c25;
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ef1c25;
+}
+
+.bg-text-gallery::after{
+  position: absolute;
+  top: -8;
+  left: 35%;
+  margin-left: -5px;
+  content: 'GALLERY';
+  font-size: 100px;
+  opacity: 0.2;
+  color: #ef1c25;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ef1c25;
 }
@@ -361,7 +481,6 @@ footer {
     color: white;
     background: url('../images/banner.png') top left/cover no-repeat !important;
     height: 400px !important;
-
   }
 
     
@@ -369,20 +488,19 @@ footer {
     #wrapper {
       display: grid;
       grid-template-areas:
-        "navigation navigation navigation"
+        "header header header"
         "main main main"
         "footer footer footer";
-      /* grid-gap: 50px; */
-    }
+      }
 
-    nav {
-      grid-area: navigation;
+    header {
+      grid-area: header;
+    }
+    nav{
       margin: 20px;
-     
     }
     main {
       grid-area: main;
-     
     }
     footer {
       grid-area: footer;
@@ -436,115 +554,27 @@ footer {
   }
 }
 
-/* table */
 
-/* Generic Styling, for Desktops/Laptops */
-
-table {
-  margin: auto;
-  width: 95%;
-  border-collapse: collapse;
-  color: #b1b0b0;
-  margin-bottom: 2em;
+/* smaller devices */
+@media only screen and (max-width: 768px) {
+h3 {
+    font-size: 22px;
 }
-
-
-th {
-  font-family: "RocknRoll One", sans-serif;
-  background: #c9c9c900; 
-  border-top: 1px solid #2d3436;
-  color: #c9c9c9;
-  text-transform: uppercase;
-  font-weight: bold;
+.shows-list li p {
   font-size: 18px;
-  
 }
-td, a{
-  font-size: 18px;
-  text-transform: capitalize;
+h2 {
+  padding: 0.4em 0;
 }
-th{
-  padding: 10px;
+.navigation-links li {
+  padding: 1.2em;
 }
-td{
-  padding: 15px;
-  border-top: 1px solid #2d3436;
-  text-align: center;
+.skip-content {
+  width: 100%;
+  background-color: #000000;
+  opacity: 0.8;
+  border-bottom: 1px solid #c9c9c9;
 }
-@media only screen and (max-width: 760px),
-  (min-device-width: 768px) and (max-device-width: 1024px) {
-
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-    font-size: 15px;
-  } 
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  tr {
-
-    border: #c9c9c9 1px solid;
-    /* margin: 20px 20px; */
-    border-radius: 10px;
-    margin: 10px;
-  }
-  td {
-    /* Behave  like a "row" */
-    border: none;
-    border-top: #c9c9c9 1px solid;
-    position: relative;
-    padding-left: 50%;
-    
-  }
-  td:before {
-
-    position: absolute;
-    /* top: 26px; */
-    left: 20px;
-    width: 30%;
-    padding-right: 10px;
-    white-space: nowrap;
-    text-align: center;
-  } 
-
-  td:nth-of-type(1):before {
-    content: "Date";
-    font-size: 18px;
-   color: #fffafa;
-    font-weight: 500;
-  }
-  td:nth-of-type(2):before {
-    content: "Location";
-    font-size: 18px;
-   color: #fffafa;
-    font-weight: 500;
-  }
-  td:nth-of-type(3):before {
-    content: "Number of entries";
-    font-size: 18px;
-   color: #fffafa;
-    font-weight: 500;
-  }
-  td:nth-of-type(4):before {
-    content: "Guest";
-    font-size: 18px;
-   color: #fffafa;
-    font-weight: 500;
-  }
-  td:nth-of-type(5):before {
-    content: "Action";
-    font-size: 18px;
-   color: #fffafa;
-    font-weight: 500;
-  }
-
 }
 
 
@@ -620,3 +650,15 @@ td{
 }
 
 
+
+
+
+.skip-content{
+  width: 100%;
+  background-color: #000000;
+  color:#c9c9c9;
+  opacity: 0.7;
+   text-align: right;
+  padding: 1em;
+  font-size: small;
+}
